@@ -6,9 +6,9 @@ public class Student {
     private String USN;
     private String studentName;
     private String sBranch;
-    private int phoneNumber;
+    private long phoneNumber;
 
-    public Student(String USN, String studentName, String sBranch, int phoneNumber) {
+    public Student(String USN, String studentName, String sBranch, long phoneNumber) {
         this.USN = USN;
         this.studentName = studentName;
         this.sBranch = sBranch;
@@ -22,21 +22,23 @@ public class Student {
     public static void main(String args[]) {
         Student student[] = new Student[100];
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number of Students : ");
+        System.out.print("Enter the number of Students : ");
         int n = sc.nextInt();
         System.out.println("Enter Student Details :");
         for (int i = 0; i < n; i++) {
             System.out.println("Student " + (i+1) + " :");
-            System.out.println("Enter Student USN : ");
+            System.out.print("Enter Student USN : ");
             String USN = sc.next();
-            System.out.println("Enter Student Name : ");
+            System.out.print("Enter Student Name : ");
             String sName = sc.next();
-            System.out.println("Enter Branch : ");
+            System.out.print("Enter Branch : ");
             String sBranch = sc.next();
-            System.out.println("Enter Phone Number : ");
-            int phoneNumber = sc.nextInt();
+            System.out.print("Enter Phone Number : ");
+            long phoneNumber = sc.nextLong();
             student[i] = new Student(USN, sName, sBranch, phoneNumber);
+            System.out.println();
         }
+        System.out.println("USN\t\tName\tBranch\tPhone No.");
         for (int j = 0; j < n; j++) {
             student[j].displayRecord();
         }

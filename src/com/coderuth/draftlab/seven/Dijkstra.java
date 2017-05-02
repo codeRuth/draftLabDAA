@@ -54,15 +54,15 @@ public class Dijkstra {
 
     public static void main(String[] args) {
         int a[][] = new int[10][10];
-        int i, j, n, s;
-        System.out.println("Enter the Number of Vertices :");
         Scanner sc = new Scanner(System.in);
+        int i, j, n, s;
+        System.out.print("Enter the Number of Vertices :");
         n = sc.nextInt();
         System.out.println("Enter the Weighted Matrix :");
         for (i = 0; i < n; i++)
             for (j = 0; j < n; j++)
                 a[i][j] = sc.nextInt();
-        System.out.println("Enter the Source Vertex");
+        System.out.print("Enter the Source Vertex :");
         s = sc.nextInt();
         Dijkstra tr = new Dijkstra();
         tr.dijkstra(a, s, n);

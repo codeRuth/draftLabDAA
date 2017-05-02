@@ -18,13 +18,13 @@ public class SubSet {
         int x[] = new int[10];
         int n, d, sum, present = 0;
         int j;
-        System.out.println("enter the number of elements of set");
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the Number of Elements in Set : ");
         n = sc.nextInt();
-        System.out.println("enter the elements of set");
+        System.out.println("Enter the Elements of Set : ");
         for (int i = 1; i <= n; i++)
             a[i] = sc.nextInt();
-        System.out.println("enter the positive integer sum");
+        System.out.println("Enter the Positive Integer Sum : ");
         d = sc.nextInt();
         if (d > 0) {
             for (int i = 1; i <= Math.pow(2, n) - 1; i++) {
@@ -35,17 +35,17 @@ public class SubSet {
                     if (x[j] == 1)
                         sum = sum + a[j];
                 if (d == sum) {
-                    System.out.print("Subset={");
+                    System.out.print("Subset = {");
                     present = 1;
                     for (j = 1; j <= n; j++)
                         if (x[j] == 1)
-                            System.out.print(a[j] + ",");
-                    System.out.print("}=" + d);
+                            System.out.print(a[j]+", ");
+                    System.out.print("} = " + d);
                     System.out.println();
                 }
             }
         }
         if (present == 0)
-            System.out.println("Solution does not exists");
+            System.out.println("Solution does not Exist.");
     }
 }

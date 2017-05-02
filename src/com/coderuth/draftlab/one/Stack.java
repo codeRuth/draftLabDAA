@@ -35,12 +35,12 @@ public class Stack {
         Stack stackObj = new Stack();
         Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println("Enter 1. pushElement() 2. popElement() 3. displayStack() :");
+            System.out.println("1.Push 2.Pop 3.Display 4.Exit");
             System.out.print("Enter your Choice : ");
             int ch = sc.nextInt();
             switch (ch) {
                 case 1:
-                    System.out.println("Enter the Element to be Pushed :");
+                    System.out.print("Enter the Element to be Pushed : ");
                     int ele = sc.nextInt();
                     stackObj.pushElement(ele);
                     break;
@@ -56,6 +56,7 @@ public class Stack {
                 case 4:
                     return;
             }
+            System.out.println();
         }
     }
 }
