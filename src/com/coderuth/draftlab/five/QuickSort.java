@@ -9,7 +9,7 @@ public class QuickSort {
     private static int high;
     private static int num;
 
-    private static int partition(int l, int h) {
+    private int partition(int l, int h) {
         int i, p = l, piv = a[l];
         for (i = l + 1; i <= h; i++) {
             if (piv > a[i]) {
@@ -22,7 +22,7 @@ public class QuickSort {
         return p;
     }
 
-    public static void quicksort(int l, int h) {
+    public void quicksort(int l, int h) {
         if (l < h) {
             int m = partition(l, h);
             quicksort(l, m - 1);
@@ -32,9 +32,10 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
+        QuickSort q=new QuickSort();
         for (int i = 1; i <= 10; i++) {
             num = i * n;
-            System.out.print("\t\t" + num);
+            System.out.print(num);
             a = new int[num];
             Random r = new Random();
             for (int j = 0; j < num; j++) {
@@ -44,7 +45,7 @@ public class QuickSort {
             low = 0;
             high = num - 1;
             long start = System.currentTimeMillis();
-            quicksort(low, high);
+            q.quicksort(low, high);
             long end = System.currentTimeMillis();
             long time = end - start;
             System.out.println(" " + time);

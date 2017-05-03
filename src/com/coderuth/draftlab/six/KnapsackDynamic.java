@@ -17,7 +17,7 @@ public class KnapsackDynamic {
                             1][j]), (sol[i - 1][j - wt[i]] + val[i]));
             }
         }
-        System.out.println("The optimal solution is" + sol[N][W]);
+        System.out.println("The Optimal Solution is : " + sol[N][W]);
         int[] selected = new int[N + 1];
         for (i = 0; i < N + 1; i++)
             selected[i] = 0;
@@ -40,17 +40,17 @@ public class KnapsackDynamic {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         KnapsackDynamic ks = new KnapsackDynamic();
-        System.out.println("Enter number of elements ");
+        System.out.print("Enter number of Elements : ");
         int n = scan.nextInt();
         int[] wt = new int[n + 1];
         int[] val = new int[n + 1];
-        System.out.println("\nEnter weight for " + n + " elements");
+        System.out.println("\nEnter Weight of " + n + " Elements : ");
         for (int i = 1; i <= n; i++)
             wt[i] = scan.nextInt();
-        System.out.println("\nEnter value for " + n + " elements");
+        System.out.println("\nEnter Value of " + n + " Elements : ");
         for (int i = 1; i <= n; i++)
             val[i] = scan.nextInt();
-        System.out.println("\nEnter knapsack weight ");
+        System.out.println("\nEnter Knapsack Weight  : ");
         int W = scan.nextInt();
         ks.solve(wt, val, W, n);
     }
