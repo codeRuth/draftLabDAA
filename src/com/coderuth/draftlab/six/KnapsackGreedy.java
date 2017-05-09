@@ -28,7 +28,7 @@ public class KnapsackGreedy {
                 }
             }
             if (array[0][j] > m) {
-                System.out.println("Quantity of item number: " + (j + 1) + " added is " + m);
+                System.out.println("Quantity of Item " + (j + 1) + " : " + m);
                 sum += m * max;
                 m = -1;
             } else {

@@ -7,15 +7,14 @@ class HamiltonianCycle {
 
     public HamiltonianCycle() {
         Scanner src = new Scanner(System.in);
-        System.out.println("Enter the number of nodes");
+        System.out.println("Enter the Number of Nodes : ");
         n = src.nextInt();
         x = new int[n];
         x[0] = 0;
-        for (int i = 1; i < n;
-             i++)
+        for (int i = 1; i < n; i++)
             x[i] = -1;
         adj = new int[n][n];
-        System.out.println("Enter the adjacency matrix");
+        System.out.println("Enter the Adjacency Matrix : ");
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 adj[i][j] = src.nextInt();
@@ -27,16 +26,15 @@ class HamiltonianCycle {
             x[k] = x[k] + 1;
             if (x[k] == n)
                 x[k] = -1;
-            if
-                    (x[k] == -1)
+            if (x[k] == -1)
                 return;
             if (adj[x[k - 1]][x[k]] == 1)
                 for (i = 0; i < k; i++)
                     if (x[i] == x[k])
                         break;
             if (i == k)
-                if (k < n - 1 || k == n - 1 &&
-                        adj[x[n - 1]][0] == 1) return;
+                if (k < n - 1 || k == n - 1 && adj[x[n - 1]][0] == 1)
+                    return;
         }
     }
 
@@ -53,12 +51,5 @@ class HamiltonianCycle {
             } else getHCycle(k + 1);
 
         }
-    }
-}
-
-class HamiltonianCycleClient {
-    public static void main(String args[]) {
-        HamiltonianCycle obj = new HamiltonianCycle();
-        obj.getHCycle(1);
     }
 }

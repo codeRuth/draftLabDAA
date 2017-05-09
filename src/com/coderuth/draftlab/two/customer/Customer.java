@@ -1,4 +1,4 @@
-package com.coderuth.draftlab.two;
+package com.coderuth.draftlab.two.customer;
 
 import java.util.Scanner;
 import java.util.StringTokenizer;

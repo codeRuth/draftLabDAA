@@ -1,14 +1,14 @@
 package com.coderuth.draftlab.three.threads;
 
-import java.util.*;
+import java.util.Random;
+
 
 class RandomNumber extends Thread {
     public void run () {
-        int num;
         Random r = new Random();
         try {
             for (int i = 0; i < 5; i++) {
-                num = r.nextInt(100);
+                int num = r.nextInt(100);
                 System.out.println("RandomNumber Thread : " + num);
                 Thread squareThread = new Thread(new Square(num));
                 squareThread.start();
